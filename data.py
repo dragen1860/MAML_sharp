@@ -414,6 +414,7 @@ class FewShotLearningDatasetParallel(Dataset):
         """
         rng = np.random.RandomState(seed)
 
+        # print(list(self.dataset_size_dict[dataset_name].keys()), self.num_classes_per_set)
         selected_classes = rng.choice(list(self.dataset_size_dict[dataset_name].keys()),
                                       size=self.num_classes_per_set, replace=False)
         rng.shuffle(selected_classes)

@@ -49,8 +49,8 @@ class MAMLFewShotClassifier(nn.Module):
         self.current_epoch = 0
 
         self.rng = set_torch_seed(seed=args.seed)
-        self.classifier = VGGLeakyReLUNormNetwork(im_shape=self.im_shape, num_output_classes=self.args.
-                                                  num_classes_per_set,
+        self.classifier = VGGLeakyReLUNormNetwork(im_shape=self.im_shape,
+                                                  num_output_classes=self.args.num_classes_per_set,
                                                   args=args, device=device, meta_classifier=True).to(device=self.device)
         self.task_learning_rate = args.task_learning_rate
 
